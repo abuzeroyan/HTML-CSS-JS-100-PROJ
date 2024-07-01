@@ -1,0 +1,55 @@
+body{
+    height: 100vh; /* Body elemanının yüksekliğini ekran yüksekliği kadar yapar */
+    display: flex; /* Body elemanını flex container yapar */
+    justify-content: center; /* İçindeki elemanları yatayda ortalar */
+    align-items: center; /* İçindeki elemanları dikeyde ortalar */
+    font-family: sans-serif; /* Tüm metinlerde sans-serif yazı tipini kullanır */
+}
+
+a{
+    padding: 2rem 3rem; /* Linkin iç dolgusunu üst-alt 2 rem, sağ-sol 3 rem yapar */
+    text-transform: uppercase; /* Linkin metnini büyük harfe çevirir */
+    background-color: blueviolet; /* Linkin arka plan rengini menekşe mavisi yapar */
+    color: #fff; /* Linkin metin rengini beyaz yapar */
+    font-size: 1.5rem; /* Linkin metin boyutunu 1.5 rem yapar */
+    position: relative; /* Linki göreceli konumlandırır */
+    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+}
+
+a::before{
+    content: "button"; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 0; /* Üstten sıfır konumlandırır */
+    left: 0; /* Soldan sıfır konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    background: crimson; /* Arka plan rengini kırmızı yapar */
+    display: flex; /* İçeriklerin ortalanması için flexbox kullanır */
+    align-items: center; /* İçeriği dikeyde ortalar */
+    justify-content: center; /* İçeriği yatayda ortalar */
+    transform: rotateX(270deg); /* Elemanı X ekseninde 270 derece döndürerek gizler */
+    transform-origin: top; /* Döndürme işlemini üst kenar ekseninde yapar */
+    transition: all 0.5s; /* Tüm stil değişikliklerinin 0.5 saniyede gerçekleşmesini sağlar */
+}
+
+a::after{
+    content: "button"; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 0; /* Üstten sıfır konumlandırır */
+    left: 0; /* Soldan sıfır konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    background: rgb(14, 231, 14); /* Arka plan rengini yeşil yapar */
+    display: flex; /* İçeriklerin ortalanması için flexbox kullanır */
+    align-items: center; /* İçeriği dikeyde ortalar */
+    justify-content: center; /* İçeriği yatayda ortalar */
+    transform: rotateX(270deg); /* Elemanı X ekseninde 270 derece döndürerek gizler */
+    transform-origin: top; /* Döndürme işlemini üst kenar ekseninde yapar */
+    transition: all 0.5s; /* Tüm stil değişikliklerinin 0.5 saniyede gerçekleşmesini sağlar */
+    transition-delay: 0.25s; /* Stil değişikliklerinin 0.25 saniye sonra başlamasını sağlar */
+}
+
+a:hover:before,
+a:hover:after{
+    transform: rotateX(0); /* Hover durumunda elemanı X ekseninde 0 derece döndürerek gösterir */
+}

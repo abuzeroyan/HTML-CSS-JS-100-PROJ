@@ -1,0 +1,55 @@
+*{
+    padding: 0; /* Tüm elemanların iç dolgusunu sıfırlar */
+    margin: 0; /* Tüm elemanların dış dolgusunu sıfırlar */
+    box-sizing: border-box; /* Tüm elemanların box model hesaplamasını border-box olarak ayarlar */
+}
+
+.container{
+    height: 100vh; /* Konteynerin yüksekliğini ekran yüksekliği kadar yapar */
+    display: flex; /* Konteyneri flex container yapar */
+    justify-content: center; /* İçindeki elemanları yatayda ortalar */
+    align-items: center; /* İçindeki elemanları dikeyde ortalar */
+    font-family: sans-serif; /* Tüm metinlerde sans-serif yazı tipini kullanır */
+    background: crimson; /* Konteynerin arka plan rengini kırmızı yapar */
+}
+
+.btn{
+    border: none; /* Butonun kenarlığını kaldırır */
+    padding: 1rem 4rem; /* Butonun iç dolgusunu ayarlar */
+    background: rgba(17, 17, 137, 0.824); /* Butonun arka plan rengini ayarlar */
+    color: #fff; /* Butonun metin rengini beyaz yapar */
+    font-size: 22px; /* Butonun yazı boyutunu 22 piksel yapar */
+    text-transform: uppercase; /* Butonun metnini büyük harfe çevirir */
+    cursor: pointer; /* Butonun üzerine gelindiğinde fare işaretçisini pointer yapar */
+    position: relative; /* Butonu göreceli konumlandırır */
+}
+
+.btn:before{
+    content: ""; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    width: 24px; /* Genişliğini 24 piksel yapar */
+    height: 24px; /* Yüksekliğini 24 piksel yapar */
+    top: -10px; /* Üstten -10 piksel konumlandırır */
+    left: -10px; /* Soldan -10 piksel konumlandırır */
+    /*background: teal;*/ /* (Yorumlanmış) Arka plan rengini turkuaz yapar */
+    border-top: 4px solid darkblue; /* Üst kenarlığını koyu mavi yapar */
+    border-left: 4px solid darkblue; /* Sol kenarlığını koyu mavi yapar */
+    transition: all 0.25s; /* Tüm stil değişikliklerinin 0.25 saniyede gerçekleşmesini sağlar */
+}
+
+.btn:hover:before,.btn:hover:after{
+    height: 100%; /* Hover durumunda yüksekliğini %100 yapar */
+    width: 100%; /* Hover durumunda genişliğini %100 yapar */
+}
+
+.btn:after{
+    height: 24px; /* Yüksekliğini 24 piksel yapar */
+    width: 24px; /* Genişliğini 24 piksel yapar */
+    content: ""; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    bottom: -10px; /* Alttan -10 piksel konumlandırır */
+    right: -10px; /* Sağdan -10 piksel konumlandırır */
+    border-bottom: 4px solid darkblue; /* Alt kenarlığını koyu mavi yapar */
+    border-right: 4px solid darkblue; /* Sağ kenarlığını koyu mavi yapar */
+    transition: all 0.25s; /* Tüm stil değişikliklerinin 0.25 saniyede gerçekleşmesini sağlar */
+}

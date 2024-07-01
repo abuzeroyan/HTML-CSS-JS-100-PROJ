@@ -1,0 +1,45 @@
+*{
+    padding: 0; /* Tüm elemanların iç dolgusunu sıfırlar */
+    margin: 0; /* Tüm elemanların dış dolgusunu sıfırlar */
+    box-sizing: border-box; /* Elemanların genişlik ve yükseklik hesaplamasını kenarlık ve dolgu dahil olacak şekilde yapar */
+}
+
+.container{
+    display: flex; /* Konteyneri flex container yapar */
+    justify-content: center; /* İçindeki elemanları yatayda ortalar */
+    align-items: center; /* İçindeki elemanları dikeyde ortalar */
+    height: 100vh; /* Konteynerin yüksekliğini ekran yüksekliği kadar yapar */
+    background: rgb(16, 16, 16); /* Konteynerin arka plan rengini siyah yapar */
+    font-family: sans-serif; /* Tüm metinlerde sans-serif yazı tipini kullanır */
+}
+
+a{
+    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+    color: antiquewhite; /* Linkin metin rengini beyaz yapar */
+    border: 2px solid antiquewhite; /* Linke beyaz bir kenarlık ekler */
+    padding: 2rem 5rem; /* Linkin iç dolgusunu üst-alt 2 rem, sağ-sol 5 rem yapar */
+    position: relative; /* Linki göreceli konumlandırır */
+    overflow: hidden; /* Taşan içeriği gizler */
+    transition: all 1s; /* Tüm stil değişikliklerinin 1 saniyede gerçekleşmesini sağlar */
+}
+
+a:before{
+    content: "DOWNLOAD"; /* İçerik ekler */
+    font-weight: bold; /* Metni kalın yapar */
+    color: black; /* Metnin rengini siyah yapar */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    left: 0; /* Soldan sıfır konumlandırır */
+    top: 0; /* Üstten sıfır konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    background: antiquewhite; /* Arka plan rengini beyaz yapar */
+    transform: translateY(-100%); /* Elemanı dikeyde -100% kaydırarak gizler */
+    transition: all 1s; /* Tüm stil değişikliklerinin 1 saniyede gerçekleşmesini sağlar */
+    display: flex; /* İçeriklerin ortalanması için flexbox kullanır */
+    justify-content: center; /* İçeriği yatayda ortalar */
+    align-items: center; /* İçeriği dikeyde ortalar */
+}
+
+a:hover:before{
+    transform: translateY(0); /* Hover durumunda elemanı dikeyde sıfır konumlandırarak gösterir */
+}

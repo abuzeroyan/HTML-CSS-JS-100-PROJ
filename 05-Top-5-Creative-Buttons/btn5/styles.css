@@ -1,0 +1,54 @@
+*{
+    padding: 0; /* Tüm elemanların iç dolgusunu sıfırlar */
+    margin: 0; /* Tüm elemanların dış dolgusunu sıfırlar */
+    box-sizing: border-box; /* Elemanların genişlik ve yükseklik hesaplamasını kenarlık ve dolgu dahil olacak şekilde yapar */
+}
+
+.container{
+    height: 100vh; /* Konteynerin yüksekliğini ekran yüksekliği kadar yapar */
+    display: flex; /* Konteyneri flex container yapar */
+    justify-content: center; /* İçindeki elemanları yatayda ortalar */
+    align-items: center; /* İçindeki elemanları dikeyde ortalar */
+    font-family: sans-serif; /* Tüm metinlerde sans-serif yazı tipini kullanır */
+    background: #000; /* Konteynerin arka plan rengini siyah yapar */
+}
+
+a{
+    position: absolute; /* Linki mutlak konumlandırır */
+    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+    padding: 1rem 4rem; /* Linkin iç dolgusunu üst-alt 1 rem, sağ-sol 4 rem yapar */
+    text-transform: uppercase; /* Linkin metnini büyük harfe çevirir */
+    background: #fff; /* Linkin arka plan rengini beyaz yapar */
+    color: #000; /* Linkin metin rengini siyah yapar */
+    border-radius: 100px; /* Linkin köşelerini yuvarlak yapar */
+    font-size: 1.5rem; /* Linkin metin boyutunu 1.5 rem yapar (font-family yanlış kullanılmış, font-size olmalı) */
+    transition: all 0.2s; /* Linkin tüm stil değişikliklerinin 0.2 saniyede gerçekleşmesini sağlar */
+}
+
+a:before{
+    content: ""; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 0; /* Üstten sıfır konumlandırır */
+    left: 0; /* Soldan sıfır konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    background: #fff; /* Arka plan rengini beyaz yapar */
+    border-radius: 100px; /* Köşelerini yuvarlak yapar */
+    transition: all 1s; /* Tüm stil değişikliklerinin 1 saniyede gerçekleşmesini sağlar */
+    z-index: -1; /* Öncelik sırasını bir kademe düşürür, diğer elemanların arkasına koyar */
+}
+
+a:hover:before{
+    transform: scaleX(1.4) scaleY(1.6); /* Linkin genişliğini ve yüksekliğini %140 ve %160 oranında büyütür */
+    opacity: 0; /* Linkin opaklığını sıfırlar (görünmez yapar) */
+}
+
+a:hover{
+    transform: translateX(-3px); /* Linki yatayda 3 piksel sola kaydırır */
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2); /* Linkin çevresine gölge ekler */
+}
+
+a:active{
+    transform: translateX(-1px); /* Linki yatayda 1 piksel sola kaydırır (tıklanma anında) */
+    box-shadow:  0 5px 10px rgba(0, 0, 0, 0.2); /* Linkin çevresine gölge ekler (tıklanma anında) */
+}

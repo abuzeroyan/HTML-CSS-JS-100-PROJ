@@ -1,0 +1,67 @@
+body{
+    height: 100vh; /* Body elemanının yüksekliğini ekran yüksekliği kadar yapar */
+    display: flex; /* Body elemanını flex container yapar */
+    justify-content: center; /* İçindeki elemanları yatayda ortalar */
+    align-items: center; /* İçindeki elemanları dikeyde ortalar */
+    font-family: sans-serif; /* Tüm metinlerde sans-serif yazı tipini kullanır */
+}
+
+a{
+    width: 300px; /* Linkin genişliğini 300 piksel yapar */
+    height: 60px; /* Linkin yüksekliğini 60 piksel yapar */
+    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+    text-transform: uppercase; /* Linkin metnini büyük harfe çevirir */
+    background: transparent; /* Linkin arka planını şeffaf yapar */
+    text-align: center; /* Linkin metnini ortalar */
+    line-height: 60px; /* Linkin satır yüksekliğini 60 piksel yapar, metni dikeyde ortalar */
+    font-weight: bold; /* Linkin metnini kalın yapar */
+    letter-spacing: 2px; /* Linkin harfleri arasına 2 piksel boşluk ekler */
+    position: relative; /* Linki göreceli konumlandırır */
+    transition: all 0.2s; /* Tüm stil değişikliklerinin 0.2 saniyede gerçekleşmesini sağlar */
+    color:#fff; /* Linkin metin rengini beyaz yapar */
+}
+
+a:before{
+    content: ""; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: -3px; /* Üstten -3 piksel konumlandırır */
+    left: -3px; /* Soldan -3 piksel konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    z-index: -1; /* Z-indeksini -1 yaparak arka plana alır */
+    background: #06c988a4; /* Arka plan rengini yarı saydam yeşil yapar */
+    mix-blend-mode: multiply; /* Blend modunu çarpma yapar */
+    transform-origin: top; /* Dönüşüm işlemini üst kenar ekseninde yapar */
+    transition: all 0.2s; /* Tüm stil değişikliklerinin 0.2 saniyede gerçekleşmesini sağlar */
+}
+
+a:after{
+    content: ""; /* İçerik ekler */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 3px; /* Üstten 3 piksel konumlandırır */
+    left: 3px; /* Soldan 3 piksel konumlandırır */
+    width: 100%; /* Genişliğini %100 yapar */
+    height: 100%; /* Yüksekliğini %100 yapar */
+    z-index: -1; /* Z-indeksini -1 yaparak arka plana alır */
+    background: #ffff00a6; /* Arka plan rengini yarı saydam sarı yapar */
+    mix-blend-mode: multiply; /* Blend modunu çarpma yapar */
+    transform-origin: bottom; /* Dönüşüm işlemini alt kenar ekseninde yapar */
+    transition: all 0.2s; /* Tüm stil değişikliklerinin 0.2 saniyede gerçekleşmesini sağlar */
+}
+
+a:hover:before{
+    top: -6px; /* Hover durumunda üstten -6 piksel konumlandırır */
+    left: 0; /* Hover durumunda soldan sıfır konumlandırır */
+    transform: perspective(1000px) rotateX(75deg); /* 1000px perspektif kullanarak X ekseninde 75 derece döndürür */
+}
+
+a:hover:after{
+    top: 6px; /* Hover durumunda üstten 6 piksel konumlandırır */
+    left: 0; /* Hover durumunda soldan sıfır konumlandırır */
+    transform: perspective(1000px) rotateX(-75deg); /* 1000px perspektif kullanarak X ekseninde -75 derece döndürür */
+}
+
+a:hover{
+    color: #000; /* Hover durumunda linkin metin rengini siyah yapar */
+    font-weight: bold; /* Hover durumunda linkin metnini kalın yapar */
+}
