@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box; /* Tüm öğeler için kutu modelini border-box olarak ayarlar */
+}
+
+body {
+    font-family: 'inter', sans-serif; /* Yazı tipini ayarlar */
+    display: flex; /* Esnek kutu modelini uygular */
+    align-items: center; /* Öğeleri dikeyde ortalar */
+    justify-content: center; /* Öğeleri yatayda ortalar */
+    height: 100vh; /* Yüksekliği ekranın tamamı yapar */
+    margin: 0; /* Varsayılan marjin değerini sıfırlar */
+    overflow: hidden; /* Taşmayı gizler */
+}
+
+.container {
+    display: flex; /* Esnek kutu modelini uygular */
+    width: 70vw; /* Genişliği görünüm genişliğinin %70'i yapar */
+}
+
+.panel {
+    background-size: auto 100%; /* Arka plan resmini otomatik genişlik, %100 yükseklik olacak şekilde ayarlar */
+    background-position: center; /* Arka plan resmini ortalar */
+    background-repeat: no-repeat; /* Arka plan resminin tekrar etmesini engeller */
+    height: 50vh; /* Yüksekliği görünüm yüksekliğinin %50'si yapar */
+    border-radius: 75px; /* Köşeleri yuvarlatır */
+    cursor: pointer; /* Fare imlecini işaretçi yapar */
+    flex: 0.7; /* Esnek büyüme faktörünü ayarlar */
+    margin: 5px; /* Çevresine 5px boşluk ekler */
+    position: relative; /* Konumunu göreceli yapar */
+    transition: flex 0.2s ease-in; /* Esnek büyüme faktöründe geçiş süresi ve hızını ayarlar */
+}
+
+.panel h3 {
+    font-size: 30px; /* Yazı boyutunu 30px yapar */
+    position: absolute; /* Konumunu mutlak yapar */
+    bottom: 40px; /* Alttan 40px boşluk bırakır */
+    left: 35%; /* Soldan %35 boşluk bırakır */
+    margin: 0px; /* Varsayılan marjin değerini sıfırlar */
+    opacity: 0; /* Opaklığı sıfırlar (görünmez yapar) */
+    color: #feffdf; /* Yazı rengini açık sarı yapar */
+}
+
+.panel.active {
+    flex: 3; /* Esnek büyüme faktörünü 3 yapar */
+}
+
+.panel.active h3 {
+    text-decoration: underline; /* Yazıyı altını çizer */
+    opacity: 1; /* Opaklığı 1 yapar (görünür yapar) */
+    transition: opacity 0.3s ease-in 0.3s; /* Opaklık geçiş süresi, hızını ve gecikmesini ayarlar */
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100vw; /* Genişliği görünüm genişliğinin %100'ü yapar */
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none; /* Dördüncü ve beşinci panelleri gizler */
+    }
+}
