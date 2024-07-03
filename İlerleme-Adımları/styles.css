@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap'); /* Google Fonts'tan 'Inter' fontunu import ediyor */
+
+:root{
+    --line-border-fill: #ff4d6d; /* Dolu çizgi ve buton rengi */
+    --line-border-empty: #dee2e6; /* Boş çizgi ve inaktif daire rengi */
+}
+
+*{
+    box-sizing: border-box; /* Tüm elementlerin box-sizing özelliklerini border-box olarak ayarlar */
+}
+
+body{
+    font-family: 'Inter', sans-serif; /* Font ailesini 'Inter' olarak ayarlar */
+    background-color: #f8f9fa; /* Arka plan rengini açık gri yapar */
+    display: flex; /* Flexbox düzeni kullanır */
+    align-items: center; /* İçerikleri dikeyde ortalar */
+    justify-content: center; /* İçerikleri yatayda ortalar */
+    height: 100vh; /* Yüksekliği ekranın tamamı kadar yapar */
+    margin: 0px; /* Kenar boşluklarını sıfırlar */
+    overflow: hidden; /* Taşan içeriği gizler */
+}
+
+.container{
+    text-align: center; /* İçerikleri ortalar */
+}
+
+.progress-container{
+    display: flex; /* Flexbox düzeni kullanır */
+    justify-content: space-between; /* İçerikleri eşit aralıklarla dağıtır */
+    position: relative; /* Konumlandırma için referans olur */
+    margin-bottom: 30px; /* Alt kenar boşluğu ekler */
+    width: 350px; /* Genişliği 350px yapar */
+    max-width: 100%; /* Genişliği %100'ü geçmez */
+}
+
+.progress-container::before{
+    content: ''; /* Boş içerik ekler */
+    background-color: var(--line-border-empty); /* Boş çizgi rengini ayarlar */
+    height: 4px; /* Çizgi yüksekliğini 4px yapar */
+    width: 100%; /* Çizgi genişliğini %100 yapar */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 50%; /* Üstten %50 konumlandırır */
+    left: 0; /* Soldan sıfır konumlandırır */
+    transform: translateY(-50%); /* Y ekseninde ortalar */
+    z-index: -1; /* Z-indeksi -1 yaparak diğer elementlerin arkasına koyar */
+    transition: 0.4s ease; /* Geçiş süresini 0.4s yapar ve yumuşak geçiş sağlar */
+}
+
+.progress{
+    background-color: var(--line-border-fill); /* Dolu çizgi rengini ayarlar */
+    height: 4px; /* Çizgi yüksekliğini 4px yapar */
+    width: 0%; /* Çizgi genişliğini başlangıçta %0 yapar */
+    position: absolute; /* Mutlak konumlandırma yapar */
+    top: 50%; /* Üstten %50 konumlandırır */
+    left: 0; /* Soldan sıfır konumlandırır */
+    transform: translateY(-50%); /* Y ekseninde ortalar */
+    z-index: -1; /* Z-indeksi -1 yaparak diğer elementlerin arkasına koyar */
+    transition: 0.4s ease; /* Geçiş süresini 0.4s yapar ve yumuşak geçiş sağlar */
+}
+
+.circle{
+    background-color: #fff; /* Daire arka plan rengini beyaz yapar */
+    border-radius: 50%; /* Daire şekli verir */
+    height: 30px; /* Yüksekliği 30px yapar */
+    width: 30px; /* Genişliği 30px yapar */
+    display: flex; /* Flexbox düzeni kullanır */
+    align-items: center; /* İçerikleri dikeyde ortalar */
+    justify-content: center; /* İçerikleri yatayda ortalar */
+    border: 3px solid var(--line-border-empty); /* Dairenin sınırlarını ve rengini ayarlar */
+    transition: 0.4s ease; /* Geçiş süresini 0.4s yapar ve yumuşak geçiş sağlar */
+}
+
+.circle.active{
+    border-color: var(--line-border-fill); /* Aktif daire rengini ayarlar */
+}
+
+.btn{
+    background-color: var(--line-border-fill); /* Buton arka plan rengini ayarlar */
+    color: #fff; /* Buton metin rengini beyaz yapar */
+    border: 0; /* Buton kenarlarını kaldırır */
+    border-radius: 8px; /* Buton kenarlarını yuvarlak yapar */
+    cursor: pointer; /* Buton üzerine gelince imleci değiştirir */
+    font-family: inherit; /* Font ailesini miras alır */
+    padding: 8px 24px; /* Buton içeriğine dolgu ekler */
+    font-size: 14px; /* Font boyutunu ayarlar */
+    margin: 5px; /* Buton kenar boşluklarını ayarlar */
+}
+
+.btn:active{
+    transform: scale(0.98); /* Tıklanınca butonu küçültür */
+}
+
+.btn:focus{
+    outline: 0; /* Odaklandığında kenarlık eklemez */
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty); /* Deaktif buton rengini ayarlar */
+}
