@@ -1,131 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap'); /* Google Fonts'dan 'Inter' fontunu import eder */
 
-*{
-    box-sizing: border-box;
+* {
+    box-sizing: border-box; /* Tüm öğeler için kutu modelini border-box olarak ayarlar */
 }
 
-body{
-    font-family:'Inter' sans-serif;
-    background-color: #333;
-    color: #222;
-    margin: 0;
-    overflow-x: hidden;
+body {
+    font-family: 'Inter', sans-serif; /* Yazı tipini ayarlar */
+    background-color: #333; /* Arka plan rengini koyu gri yapar */
+    color: #222; /* Yazı rengini koyu gri yapar */
+    margin: 0; /* Varsayılan marjin değerini sıfırlar */
+    overflow-x: hidden; /* Yatay taşmayı gizler */
 }
 
-.container{
-    background-color: #fafafa;
-    transform-origin: top left;
-    transition: trasnform 0.5s linear;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 50px;
+.container {
+    background-color: #fafafa; /* Arka plan rengini açık gri yapar */
+    transform-origin: top left; /* Dönüşüm noktasını sol üst olarak ayarlar */
+    transition: transform 0.5s linear; /* Dönüşümdeki geçiş süresi ve hızını ayarlar */
+    width: 100vw; /* Genişliği görünüm genişliğinin %100'ü yapar */
+    min-height: 100vh; /* Minimum yüksekliği görünüm yüksekliğinin %100'ü yapar */
+    padding: 50px; /* İç boşlukları 50px yapar */
 }
 
-.container.show-nav{
-    transform: rotate(-20deg);
-    transition: transform 0.4s ease-in;
+.container.show-nav {
+    transform: rotate(-20deg); /* Container'ı -20 derece döndürür */
+    transition: transform 0.4s ease-in; /* Dönüşümdeki geçiş süresi ve hızını ayarlar */
 }
 
-.circle-container{
-    position: fixed;
-    top: -100px;
-    left: -100px;
+.circle-container {
+    position: fixed; /* Konumunu sabit yapar */
+    top: -100px; /* Üstten 100px boşluk bırakır */
+    left: -100px; /* Soldan 100px boşluk bırakır */
 }
 
-.circle{
-    background-color: #ff7979;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.5s linear;
+.circle {
+    background-color: #ff7979; /* Arka plan rengini kırmızı yapar */
+    height: 200px; /* Yüksekliği 200px yapar */
+    width: 200px; /* Genişliği 200px yapar */
+    border-radius: 50%; /* Köşeleri tamamen yuvarlatır (daire yapar) */
+    position: relative; /* Konumunu göreceli yapar */
+    transition: transform 0.5s linear; /* Dönüşümdeki geçiş süresi ve hızını ayarlar */
 }
 
-.circle button{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100px;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    font-size: 26px;
+.circle button {
+    position: absolute; /* Konumunu mutlak yapar */
+    top: 50%; /* Üstten %50 boşluk bırakır */
+    left: 50%; /* Soldan %50 boşluk bırakır */
+    height: 100px; /* Yüksekliği 100px yapar */
+    background-color: transparent; /* Arka plan rengini şeffaf yapar */
+    color: #fff; /* Yazı rengini beyaz yapar */
+    border: none; /* Kenarlık eklemez */
+    font-size: 26px; /* Yazı boyutunu 26px yapar */
 }
 
-.circle button:focus{
-    outline: none;
+.circle button:focus {
+    outline: none; /* Odaklandığında kenarlık göstermez */
 }
 
-.circle button#open{
-    left: 60%;
+.circle button#open {
+    left: 60%; /* Soldan %60 boşluk bırakır */
 }
 
-.circle button#close{
-    top: 60%;
-    transform: rotate(90deg);
-    transform-origin: top left;
+.circle button#close {
+    top: 60%; /* Üstten %60 boşluk bırakır */
+    transform: rotate(90deg); /* 90 derece döndürür */
+    transform-origin: top left; /* Dönüşüm noktasını sol üst yapar */
 }
 
-.container.show-nav .circle{
- transform: rotate(-70deg);
+.container.show-nav .circle {
+    transform: rotate(-70deg); /* Circle'ı -70 derece döndürür */
 }
 
-.content{
-    max-width: 1000px;
-    margin: 50px auto;
+.content {
+    max-width: 1000px; /* Maksimum genişliği 1000px yapar */
+    margin: 50px auto; /* Üstten ve alttan 50px, yatayda otomatik boşluk bırakır */
 }
 
-.content h1{
-    margin: 0;
+.content h1 {
+    margin: 0; /* Varsayılan marjin değerini sıfırlar */
 }
 
-.content small{
-    color: #555;
-    font-style: italic;
+.content small {
+    color: #555; /* Yazı rengini koyu gri yapar */
+    font-style: italic; /* Yazı stilini italik yapar */
 }
 
-.content p{
-    color: #333;
-    line-height: 1.5;
-
+.content p {
+    color: #333; /* Yazı rengini koyu gri yapar */
+    line-height: 1.5; /* Satır yüksekliğini 1.5 yapar */
 }
 
-.content img{
-    max-width: 100%;
+.content img {
+    max-width: 100%; /* Maksimum genişliği %100 yapar */
 }
 
-nav{
-    position: fixed;
-    bottom: 25%;
-    left: 0;
-    z-index: 100;
+nav {
+    position: fixed; /* Konumunu sabit yapar */
+    bottom: 25%; /* Alttan %25 boşluk bırakır */
+    left: 0; /* Soldan boşluk bırakmaz */
+    z-index: 100; /* Z-indeksini 100 yapar (üstte gösterir) */
 }
 
-nav ul{
-    list-style: none;
-    padding: 30px;
+nav ul {
+    list-style: none; /* Liste işaretlerini kaldırır */
+    padding: 30px; /* İç boşlukları 30px yapar */
 }
 
-nav ul li{
-    text-transform: uppercase;
-    color: #fff;
-    margin: 40px 0;
-    transform: translateX(-100%);
-    transition: transform 0.2s ease-in;
+nav ul li {
+    text-transform: uppercase; /* Yazıyı büyük harfe dönüştürür */
+    color: #fff; /* Yazı rengini beyaz yapar */
+    margin: 40px 0; /* Üstten ve alttan 40px boşluk bırakır */
+    transform: translateX(-100%); /* X ekseninde %100 kaydırır */
+    transition: transform 0.2s ease-in; /* Dönüşümdeki geçiş süresi ve hızını ayarlar */
 }
 
-nav ul li+li{
-    margin-left: 15px;
-    transform: translateX(-150%);
+nav ul li+li {
+    margin-left: 15px; /* Soldan 15px boşluk bırakır */
+    transform: translateX(-150%); /* X ekseninde %150 kaydırır */
 }
 
-nav ul li+li+li{
-    margin: 30px;
-    transform: translateX(-200%);
+nav ul li+li+li {
+    margin: 30px; /* Tüm kenarlardan 30px boşluk bırakır */
+    transform: translateX(-200%); /* X ekseninde %200 kaydırır */
 }
 
-.container.show-nav+ nav li{
-    transform: translateX(0);
-
-    transition-delay: 0.3s;
+.container.show-nav+nav li {
+    transform: translateX(0); /* X ekseninde kaydırmayı sıfırlar */
+    transition-delay: 0.3s; /* Geçişi 0.3 saniye geciktirir */
 }
