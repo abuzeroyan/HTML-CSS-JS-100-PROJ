@@ -1,0 +1,41 @@
+.line1{
+    background-color: rgb(219, 18, 18);
+    width: 500px;
+    height: 90px;
+}
+
+.line2{
+    background-color: rgb(17, 15, 145);
+    width: 500px;
+    height: 175px;
+}
+
+.line3{
+    background-color: rgb(219, 18, 18);
+    width: 500px;
+    height: 90px;
+    
+}
+
+.circle{
+    background-color: aliceblue;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    margin-left: 15%;
+    margin-top: -19%;
+}
+
+.baslik1{
+    margin-left: 13%;
+    margin-top: -18%;
+    color: aliceblue;
+}
+
+.baslik2{
+    color: black;
+    margin-left: -61%;
+    margin-top: 6%;
+    font-size: 40px;
+    text-align: center;
+}
